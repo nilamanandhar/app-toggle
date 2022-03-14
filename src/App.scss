@@ -1,0 +1,224 @@
+
+
+.main-content{
+  display: flex;
+  background-color:teal;
+  width: 100vw;
+  height: 100vh;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center
+}
+  .first-switch {
+      background-color: teal;
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1px;
+    flex-direction: row;
+  }
+
+  .on {
+    padding: 15px 30px;
+    color: rgb(161, 161, 161);
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .first-active {
+    border: 2px solid rgb(255, 255, 255);
+    padding: 15px 30px;
+    border-radius: 50px;
+    color: rgb(255, 255, 255) !important;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 10px;
+
+  }
+
+  .off {
+    padding: 15px 30px;
+    color: rgb(161, 161, 161);
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  // second switch start
+
+  .second-switch {
+    border: 2px solid #a1a1a1;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    column-gap: 1px;
+    width: 301px;
+    box-sizing: border-box;
+    position: relative;
+    margin-bottom:40px;
+    opacity: 0.6;
+
+    &::after {
+      position: absolute;
+      content: "";
+      left: 50%;
+      right: 10px;
+      top: 10px;
+      bottom: 10px;
+      background: white;
+      border-radius: 20px;
+      transition: left 0.4s 0.2s, right 0.5s;
+    }
+
+    &-active {
+      opacity: 1;
+      border-color: white;
+      &::after {
+        right: 50%;
+        left: 10px;
+        transition: left 0.4s 0.2s, right 0.5s;
+      }
+    }
+  }
+
+  .second-on {
+    color: rgb(161, 161, 161);
+    background-color: transparent;
+    padding: 10px 90px 10px 10px;
+    border: none;
+    border-radius: 50px 0px 0px 50px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+    z-index: 2;
+    cursor: pointer;
+
+    &-active {
+      background-color: white;
+      border-radius: 50px;
+      color: black;
+      transition: background-color 2s ease-out;
+    }
+  }
+  .second-off {
+    color: rgb(161, 161, 161);
+    background-color: transparent;
+    padding: 10px 10px 10px 90px;
+    border-radius: 0px 50px 50px 0px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+    border: none;
+    z-index: 2;
+    cursor: pointer;
+
+    &-active {
+       // background-color: rgb(161, 161, 161);
+      border-radius: 50px;
+      color: rgb(95, 86, 86);
+      transition: background-color 0.5s ease-out;
+    }
+  }
+
+
+  //end of second switch
+
+
+
+  .third-switch {
+    opacity: 0.6;
+    background-color: teal;
+    border: 2px solid rgb(161, 161, 161);
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    column-gap: 1px;
+    width: 301px;
+    box-sizing: border-box;
+    position: relative;
+    &.third-switch-active{
+      opacity: 1;
+      border-color: white;
+      &::after{
+        left: -30px;
+        right: 55%;
+        transform: skewX(20deg);
+        transition: left 0.5s, right 0.5s;
+      }
+    }
+    &::after{
+      content: "";
+      left: 50%;
+      top: 0px;
+      bottom: 0px;
+      position: absolute;
+      background: white;
+      transition: left 0.4s, right 0.5s;
+      right: -30px;
+      transform: skewX(-20deg);
+      // transition: all 0.35s ease;
+    }
+  }
+
+  .third-on {
+    color: rgb(161, 161, 161);
+    background-color: transparent;
+    padding: 10px 90px 10px 10px;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    &-active {
+      background-color: white;
+      color: black;
+      z-index: 2;
+      transition: background-color 0.5s ease-out;
+         &::before {
+        content: "";
+        left:17%;
+        top: 0px;
+        bottom: 0px;
+        position: absolute;
+        border-top: 71px solid white;
+        border-right: 50px solid transparent;
+        transition: left 0.4s;
+      }
+
+    }
+  }
+  .third-off {
+    color: rgb(161, 161, 161);
+    background-color: transparent;
+    padding: 10px 10px 10px 90px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+    &-active {
+      background-color: rgb(161, 161, 161);
+      color: rgb(95, 86, 86);
+      transition: background-color 100s ease-out;
+      &::before {
+        content: "";
+        left: 42%;
+        top: 0px;
+        bottom: 0px;
+        position: absolute;
+        border-top: 71px solid white;
+        border-left: 50px solid transparent;
+        transition: left 0.4s;
+
+      }
+    }
+  }
+
+  .third{
+    &-on,
+    &-off{
+      &::before,&::after{
+        opacity: 0;
+      }
+    }
+  }
