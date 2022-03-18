@@ -67,7 +67,7 @@
       bottom: 10px;
       background: white;
       border-radius: 20px;
-       transition: left 0.4s 0.2s, right 0.5s;
+      transition: left 0.4s 0.2s, right 0.5s;
     }
 
     &-active {
@@ -76,7 +76,7 @@
       &::after {
         right: 50%;
         left: 10px;
-        transition: left 0.5s 0.2s, right 1.6s;
+        transition: left 0.5s, right 0.4s 0.2s;
       }
     }
   }
@@ -94,10 +94,9 @@
     cursor: pointer;
 
     &-active {
-      background-color: white;
       border-radius: 50px;
       color: black;
-      transition: background-color 2.5s ease-out;
+      transition: background-color 5s ease-out;
     }
   }
   .second-off {
@@ -227,6 +226,7 @@
     position: absolute;
     width: 100px;
     height: 50px;
+    cursor: pointer;
   }
   .shape {
     stroke-dasharray: 0 500;
@@ -251,6 +251,7 @@
     font-family: 'Roboto Condensed';
     font-size: 18px;
     color: #fff;
+    transition: color 100s ease-out;
 
   }
 
@@ -258,16 +259,123 @@
     stroke-width: 2px;
     stroke-dashoffset: 0;
     stroke-dasharray: 500;
-    transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+    transition: stroke-width 1s, stroke-dashoffset 2s, stroke-dasharray 4s;
+    stroke: #fff;
+    fill: transparent;
+  }
+
+  .clickedOffShape{
+    stroke-width: 2px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 300;
+    transition: stroke-width 1s, stroke-dashoffset 2s, stroke-dasharray 2s;
+    stroke: #fff;
+    fill: transparent;
+  }
+
+  .svg {
+    position: absolute;
+  }
+
+
+  // second
+  .svg-secondwrapper {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+  }
+  .shapeSecond {
+    stroke-dasharray: 0 500;
+    stroke-dashoffset: -500;
+    stroke-width: 8px;
+    fill: transparent;
+
+    // stroke: #fff;
+    // border-bottom: 5px solid black;
+    // transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+  }
+  .textSecond {
+/*     width: 320px; */
+    // diplay:flex;
+
+    justify-content:center;
+    align-items:center;
+/*     text-align:center; */
+    position: absolute;
+    top:15px;
+    left:40px;
+    font-family: 'Roboto Condensed';
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .secondOff {
+    margin-left: 200px;
+  }
+
+  .clickedSecondShape {
+    stroke-width: 2px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 500;
+    transition: stroke-width 1s, stroke-dashoffset 2s, stroke-dasharray 4s;
     stroke: #fff;
     fill: transparent;
 
 
-    // background-color: transparent;
   }
-  .clickedOffShape{
+  .clickedSecondOffShape{
     stroke-width: 2px;
     stroke-dashoffset: 0;
+    stroke-dasharray: 500;
+    transition: stroke-width 1s, stroke-dashoffset 2s, stroke-dasharray 4s;
+    stroke: #fff;
+    fill: transparent;
+
+
+  }
+
+  .svg {
+    position: absolute;
+  }
+  // third
+  .svg-thirdwrapper {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+  }
+  .shapethird {
+    stroke-dasharray: 0 500;
+    stroke-dashoffset: 500;
+    stroke-width: 8px;
+    fill: transparent;
+    // stroke: #fff;
+    // border-bottom: 5px solid black;
+    // transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+  }
+  .textthird {
+    justify-content:center;
+    align-items:center;
+    position: absolute;
+    top:15px;
+    left:40px;
+    font-family: 'Roboto Condensed';
+    font-size: 18px;
+    color: #fff;
+
+  }
+
+  .clickedthirdShape {
+    stroke-width: 2px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: -500;
+    transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+    stroke: #fff;
+    fill: transparent;
+  }
+  .clickedthirdOffShape{
+    stroke-width: 2px;
+    stroke-dashoffset: -300;
     stroke-dasharray: 300;
     transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
     stroke: #fff;
@@ -275,7 +383,14 @@
     opacity: 0.6;
 
   }
-
   .svg {
     position: absolute;
+  }
+
+  .dimColor {
+    opacity: 0.6;
+  }
+
+  .normalColor {
+    opacity: 1;
   }
