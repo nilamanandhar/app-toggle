@@ -281,8 +281,8 @@
   // second
   .svg-secondwrapper {
     position: absolute;
-    width: 100px;
-    height: 50px;
+    // width: 100px;
+    // height: 50px;
     cursor: pointer;
   }
   .shapeSecond {
@@ -317,8 +317,8 @@
   .clickedSecondShape {
     stroke-width: 2px;
     stroke-dashoffset: 0;
-    stroke-dasharray: 500;
-    transition: stroke-width 1s, stroke-dashoffset 2s, stroke-dasharray 4s;
+    stroke-dasharray: 891;
+    transition: fill 10s, stroke 10s,stroke-dasharray 10s, stroke-dashoffset 10s;
     stroke: #fff;
     fill: transparent;
 
@@ -327,8 +327,8 @@
   .clickedSecondOffShape{
     stroke-width: 2px;
     stroke-dashoffset: 0;
-    stroke-dasharray: 500;
-    transition: stroke-width 1s, stroke-dashoffset 2s, stroke-dasharray 4s;
+    stroke-dasharray: 891;
+    transition: fill 10s,stroke 10s, stroke-dasharray 10s, stroke-dashoffset 10s;
     stroke: #fff;
     fill: transparent;
 

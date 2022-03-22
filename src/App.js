@@ -127,6 +127,14 @@ function App() {
         <div onClick={() => { toggoleHandler("off", 5) }} className={`${!switchSecond ? "second-off-active" : ""} second-off`}> Off</div>
       </div>
      {/* end new second switch */}
+
+     {/* <div style={{ border: "none"}}className={`${thirdSwitch ? 'third-switch-active' : ''} third-switch`}>
+     <svg className="svg" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <rect className={`${switchThird ? "clickedThirdShape " : "clickedThirdOffShape "}`} height="calc(100% - 2px)" x="1px" y="1px" width="calc(100% - 2px)" rx="5" vector-effect="non-scaling-stroke" />
+          </svg>
+        <div onClick={() => toggoleHandler("on", 3)} className={`${thirdSwitch ? "third-on-active" : ""} third-on`}  >On</div>
+        <div onClick={() => toggoleHandler("off", 3)} className={`${!thirdSwitch ? "third-off-active" : ""} third-off`}> Off</div>
+      </div> */}
     </div>
   );
 }
