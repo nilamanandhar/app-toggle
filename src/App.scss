@@ -1,518 +1,380 @@
+.main-container {
+  min-height: 100vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#1E90FF;
+  flex-direction: column;
+  row-gap: 20px;
+}
 
+.clickedShape {
+  opacity: 1;
+  stroke: #fff;
+  stroke-width: 2px;
+  fill: none;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 720;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2s;
+}
+.shape {
+  opacity: 1;
+  stroke: #fff;
+  stroke-width: 2px;
+  fill: none;
+  stroke-dashoffset: -720;
+  stroke-dasharray: 720;
+}
 
-// .main-content{
-//   display: flex;
-//   background-color:teal;
-//   width: 100vw;
-//   height: 100vh;
-//   flex-direction:column;
-//   justify-content: center;
-//   align-items: center
-// }
-//   .first-switch {
-//     background-color: teal;
-//     margin: 50px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     column-gap: 1px;
-//     flex-direction: row;
-//   }
+.offClickedShape {
+  opacity: 0.25;
+  stroke: white;
+  stroke-width: 2px;
+  fill: none;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 720;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2s;
+}
+.offShape {
+  opacity: 0.25;
+  stroke: black;
+  stroke-width: 2px;
+  fill: none;
+  stroke-dashoffset: 720;
+  stroke-dasharray: 720;
+  z-index: 4;
+}
 
-//   .on {
-//     padding: 15px 30px;
-//     color: rgb(161, 161, 161);
-//     cursor: pointer;
-//     font-weight: bold;
-//   }
+.second-switch {
+  height: 62px;
+  width: 302px;
+  box-sizing: border-box;
+  position: relative;
 
-//   .first-active {
-//     border: 2px solid rgb(255, 255, 255);
-//     padding: 15px 30px;
-//     border-radius: 50px;
-//     color: rgb(255, 255, 255) !important;
-//     cursor: pointer;
-//     font-weight: bold;
+  &::after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    right: 10px;
+    top: 10px;
+    bottom: 10px;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    transition: left 0.4s 0.2s, right 0.5s;
+  }
 
-//   }
-
-//   .off {
-//     padding: 15px 30px;
-//     color: rgb(161, 161, 161);
-//     cursor: pointer;
-//     font-weight: bold;
-//   }
-
-//   // second switch start
-
-//   .second-switch {
-//     border: 2px solid #a1a1a1;
-//     border-radius: 50px;
-//     display: flex;
-//     flex-direction: row;
-//     overflow: hidden;
-//     column-gap: 1px;
-//     width: 301px;
-//     box-sizing: border-box;
-//     position: relative;
-//     margin-bottom:40px;
-//     opacity: 0.6;
-
-//     &::after {
-//       position: absolute;
-//       content: "";
-//       left: 50%;
-//       right: 10px;
-//       top: 10px;
-//       bottom: 10px;
-//       background: white;
-//       border-radius: 20px;
-//       transition: left 0.4s 0.2s, right 0.5s;
-//     }
-
-//     &-active {
-//       opacity: 1;
-//       border-color: white;
-//       &::after {
-//         right: 50%;
-//         left: 10px;
-//         transition: left 0.5s, right 0.4s 0.2s;
-//       }
-//     }
-//   }
-
-//   .second-on {
-//     color: rgb(161, 161, 161);
-//     background-color: transparent;
-//     padding: 10px 90px 10px 10px;
-//     border: none;
-//     border-radius: 50px 0px 0px 50px;
-//     font-size: 20px;
-//     font-weight: bold;
-//     margin: 10px;
-//     z-index: 2;
-//     cursor: pointer;
-
-//     &-active {
-//       border-radius: 50px;
-//       color: black;
-//       transition: background-color 5s ease-out;
-//     }
-//   }
-//   .second-off {
-//     color: rgb(161, 161, 161);
-//     background-color: transparent;
-//     padding: 10px 10px 10px 90px;
-//     border-radius: 0px 50px 50px 0px;
-//     font-size: 20px;
-//     font-weight: bold;
-//     margin: 10px;
-//     border: none;
-//     z-index: 2;
-//     cursor: pointer;
-
-//     &-active {
-//       border-radius: 50px;
-//       color: rgb(95, 86, 86);
-//        transition: background-color 0.5s ease-out;
-//     }
-//   }
-
-
-//   //end of second switch
-
-
-
-//   .third-switch {
-//     opacity: 0.6;
-//     background-color: teal;
-//     border: 2px solid rgb(161, 161, 161);
-//     display: flex;
-//     flex-direction: row;
-//     overflow: hidden;
-//     column-gap: 1px;
-//     width: 301px;
-//     box-sizing: border-box;
-//     position: relative;
-//     &.third-switch-active{
-//       opacity: 1;
-//       border-color: white;
-//       &::after{
-//         left: -30px;
-//         right: 55%;
-//         transform: skewX(20deg);
-//         transition: left 0.5s, right 0.5s;
-//       }
-//     }
-//     &::after{
-//       content: "";
-//       left: 50%;
-//       top: 0px;
-//       bottom: 0px;
-//       position: absolute;
-//       background: white;
-//       transition: left 0.4s, right 0.5s;
-//       right: -30px;
-//       transform: skewX(-20deg);
-//       // transition: all 0.35s ease;
-//     }
-//   }
-
-//   .third-on {
-//     color: rgb(161, 161, 161);
-//     background-color: transparent;
-//     padding: 10px 90px 10px 10px;
-//     border: none;
-//     font-size: 20px;
-//     font-weight: bold;
-//     cursor: pointer;
-//     &-active {
-//       background-color: white;
-//       color: black;
-//       z-index: 2;
-//       transition: background-color 0.5s ease-out;
-//          &::before {
-//         content: "";
-//         left:17%;
-//         top: 0px;
-//         bottom: 0px;
-//         position: absolute;
-//         border-top: 71px solid white;
-//         border-right: 50px solid transparent;
-//         transition: left 0.4s;
-//       }
-
-//     }
-//   }
-//   .third-off {
-//     color: rgb(161, 161, 161);
-//     background-color: transparent;
-//     padding: 10px 10px 10px 90px;
-//     font-size: 20px;
-//     font-weight: bold;
-//     border: none;
-//     cursor: pointer;
-//     z-index: 2;
-//     &-active {
-//       background-color: rgb(161, 161, 161);
-//       color: rgb(95, 86, 86);
-//       transition: background-color 100s ease-out;
-//       &::before {
-//         content: "";
-//         left: 42%;
-//         top: 0px;
-//         bottom: 0px;
-//         position: absolute;
-//         border-top: 71px solid white;
-//         border-left: 50px solid transparent;
-//         transition: left 0.4s;
-
-//       }
-//     }
-//   }
-
-//   .third{
-//     &-on,
-//     &-off{
-//       &::before,&::after{
-//         opacity: 0;
-//       }
-//     }
-//   }
-
-//   // svg
-
-//   .svg-wrapper {
-//     position: absolute;
-//     width: 100px;
-//     height: 50px;
-//     cursor: pointer;
-//   }
-//   .shape {
-//     stroke-dasharray: 0 500;
-//     stroke-dashoffset: -500;
-//     stroke-width: 8px;
-//     fill: transparent;
-
-//     // stroke: #fff;
-//     // border-bottom: 5px solid black;
-//     // transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
-//   }
-//   .text {
-// /*     width: 320px; */
-//     // diplay:flex;
-
-//     justify-content:center;
-//     align-items:center;
-// /*     text-align:center; */
-//     position: absolute;
-//     top:15px;
-//     left:40px;
-//     font-family: 'Roboto Condensed';
-//     font-size: 18px;
-//     color: #fff;
-//     transition: color 100s ease-out;
-
-//   }
-
-//   .clickedShape {
-//     stroke-width: 2px;
-//     stroke-dashoffset: 0;
-//     stroke-dasharray: 500;
-//     transition: stroke-width 1s, stroke-dashoffset 2s, stroke-dasharray 4s;
-//     stroke: #fff;
-//     fill: transparent;
-//   }
-
-//   .clickedOffShape{
-//     stroke-width: 2px;
-//     stroke-dashoffset: 0;
-//     stroke-dasharray: 300;
-//     transition: stroke-width 1s, stroke-dashoffset 2s, stroke-dasharray 2s;
-//     stroke: #fff;
-//     fill: transparent;
-//   }
-
-//   .svg {
-//     position: absolute;
-//   }
-
-
-//   // second
-//   .svg-secondwrapper {
-//     position: absolute;
-//     // width: 100px;
-//     // height: 50px;
-//     cursor: pointer;
-//   }
-//   .shapeSecond {
-//     stroke-dasharray: 0 500;
-//     stroke-dashoffset: -500;
-//     stroke-width: 8px;
-//     fill: transparent;
-
-//     // stroke: #fff;
-//     // border-bottom: 5px solid black;
-//     // transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
-//   }
-//   .textSecond {
-// /*     width: 320px; */
-//     // diplay:flex;
-
-//     justify-content:center;
-//     align-items:center;
-// /*     text-align:center; */
-//     position: absolute;
-//     top:15px;
-//     left:40px;
-//     font-family: 'Roboto Condensed';
-//     font-size: 18px;
-//     color: #fff;
-//   }
-
-//   .secondOff {
-//     margin-left: 200px;
-//   }
-
-//   .clickedSecondShape {
-//     stroke-width: 2px;
-//     stroke-dashoffset: 0;
-//     stroke-dasharray: 400;
-//     transition: fill 10s, stroke 10s,stroke-dasharray 10s, stroke-dashoffset 10s;
-//     stroke: #fff;
-//     fill: transparent;
-
-
-//   }
-//   .clickedSecondOffShape{
-//     stroke-width: 2px;
-//     stroke-dashoffset: 0;
-//     stroke-dasharray: 891;
-//     transition: fill 10s,stroke 10s, stroke-dasharray 10s, stroke-dashoffset 10s;
-//     stroke: #fff;
-//     fill: transparent;
-
-
-//   }
-
-//   .svg {
-//     position: absolute;
-//   }
-//   // third
-//   .svg-thirdwrapper {
-//     position: absolute;
-//     width: 100px;
-//     height: 50px;
-//   }
-//   .shapethird {
-//     stroke-dasharray: 0 500;
-//     stroke-dashoffset: 500;
-//     stroke-width: 8px;
-//     fill: transparent;
-//     // stroke: #fff;
-//     // border-bottom: 5px solid black;
-//     // transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
-//   }
-//   .textthird {
-//     justify-content:center;
-//     align-items:center;
-//     position: absolute;
-//     top:15px;
-//     left:40px;
-//     font-family: 'Roboto Condensed';
-//     font-size: 18px;
-//     color: #fff;
-
-//   }
-
-//   .clickedthirdShape {
-//     stroke-width: 2px;
-//     stroke-dashoffset: 0;
-//     stroke-dasharray: -500;
-//     transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
-//     stroke: #fff;
-//     fill: transparent;
-//   }
-//   .clickedthirdOffShape{
-//     stroke-width: 2px;
-//     stroke-dashoffset: -300;
-//     stroke-dasharray: 300;
-//     transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
-//     stroke: #fff;
-//     fill: transparent;
-//     opacity: 0.6;
-
-//   }
-//   .svg {
-//     position: absolute;
-//   }
-
-//   .dimColor {
-//     opacity: 0.6;
-//   }
-
-//   .normalColor {
-//     opacity: 1;
-//   }
-
-  .clickedShape {
-
+  &-active {
     opacity: 1;
-    stroke: black;
-    stroke-width: 2px;
-    fill:none;
-    stroke-dashoffset: 0;
-    stroke-dasharray:720 ;
-    transition: stroke-width 1s, stroke-dashoffset 2s, stroke-dasharray 5s;
-  }
-  .shape{
-    opacity: 1;
-    stroke: black;
-    stroke-width: 2px;
-    fill:none;
-    stroke-dashoffset: -720;
-    stroke-dasharray:  720  ;
-  }
-
-  .offClickedShape{
-    opacity: 0.25;
-    stroke: black;
-    stroke-width: 2px;
-    fill:none;
-    stroke-dashoffset: 0;
-    stroke-dasharray:720 ;
-    transition: stroke-width 1s, stroke-dashoffset 2s, stroke-dasharray 5s;
-    border: 1px solid black;
-
-  }
-  .offShape{
-    opacity: 0.25;
-    stroke: black;
-    stroke-width: 2px;
-    fill:none;
-    stroke-dashoffset: 720;
-    stroke-dasharray:  720  ;
-  }
-
-  .second-switch {
-        // border: 2px solid #a1a1a1;
-        // border-radius: 50px;
-        // display: flex;
-        // flex-direction: row;
-        // overflow: hidden;
-        // column-gap: 1px;
-        height:62px;
-        width: 302px;
-        box-sizing: border-box;
-        position: relative;
-        // margin-bottom:40px;
-        // opacity: 0.6;
-
-        &::after {
-          position: absolute;
-          content: "";
-          left: 50%;
-          right: 10px;
-          top: 10px;
-          bottom: 10px;
-          background: rgb(31, 28, 28);
-          border-radius: 20px;
-          transition: left 0.4s 0.2s, right 0.5s;
-        }
-
-        &-active {
-          opacity: 1;
-          border-color: rgb(24, 21, 21);
-          &::after {
-            right: 50%;
-            left: 10px;
-            transition: left 0.5s, right 0.4s 0.2s;
-          }
-        }
-      }
-
-
-    .second-on {
-      position:absolute;
-      top:20px;
-      left:20px;
-      cursor:pointer;
-    color: rgb(161, 161, 161);
-    background-color: transparent;
-    // padding: 10px 90px 10px 10px;
-    // border: none;
-    // border-radius: 50px 0px 0px 50px;
-    // font-size: 20px;
-    // font-weight: bold;
-    // margin: 10px;
-    z-index: 2;
-    // cursor: pointer;
-
-    &-active {
-      // border-radius: 50px;
-      color: black;
-      transition: background-color 5s ease-out;
+    border-color: rgb(24, 21, 21);
+    &::after {
+      right: 50%;
+      left: 10px;
+      transition: left 0.5s, right 0.4s 0.2s;
     }
   }
-  .second-off {
-    position:absolute;
-    top:20px;
-    left:250px;
-    cursor:pointer;
-    color: rgb(161, 161, 161);
-    background-color: transparent;
-    // padding: 10px 10px 10px 90px;
-    // border-radius: 0px 50px 50px 0px;
-    // font-size: 20px;
-    // font-weight: bold;
-    // margin: 10px;
-    // border: none;
-    z-index: 2;
-    // cursor: pointer;
+}
 
-    &-active {
-      // border-radius: 50px;
-      color: rgb(95, 86, 86);
-       transition: background-color 0.5s ease-out;
+.second-on {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  color: white;
+  opacity: 0.6;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: transparent;
+  z-index: 2;
+  cursor: pointer;
+  width: 140px;
+
+  &-active {
+    font-size: 15px;
+    font-weight: bold;
+    opacity: 1;
+    color: black;
+    transition: background-color 5s ease-out;
+  }
+}
+.second-off {
+  position: absolute;
+  top: 20px;
+  left: 140px;
+  cursor: pointer;
+  color: white;
+  opacity: 0.6;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: transparent;
+  z-index: 2;
+  cursor: pointer;
+  width: 140px;
+  text-align: right;
+
+  &-active {
+    z-index: 2;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    opacity: 1;
+    transition: background-color 0.5s ease-out;
+  }
+}
+
+.third-switch {
+  height: 64px;
+  width: 304px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  border-right: 3px solid rgb(161, 161, 161);
+  box-sizing: border-box;
+  &.third-switch-active {
+    opacity: 1;
+    // border-left: 3px solid black;
+    border-right: none;
+
+    &::after {
+      left: -30px;
+      right: 55%;
+      transform: skewX(20deg);
+      transition: left 0.5s, right 0.5s;
     }
   }
+  &::after {
+    content: '';
+    left: 50%;
+    top: 3px;
+    bottom: 4px;
+    position: absolute;
+    background: white;
+    transition: left 0.4s, right 0.5s;
+    right: -30px;
+    transform: skewX(-20deg);
+  }
+}
+
+.third-on {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  color: white;
+  opacity: 0.6;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: transparent;
+  z-index: 2;
+  cursor: pointer;
+  width: 100px;
+
+  &-active {
+    background-color: white;
+    color: black;
+    opacity: 1;
+    font-size: 15px;
+    font-weight: bold;
+    z-index: 2;
+    transition: background-color 0.5s ease-out;
+    &::before {
+      content: '';
+      left: 17%;
+      top: 0px;
+      bottom: 0px;
+      position: absolute;
+      border-top: 71px solid white;
+      border-right: 50px solid transparent;
+      transition: left 0.4s;
+    }
+
+    &::after {
+      content: '';
+      left: 17%;
+      top: 0px;
+      bottom: 0px;
+      position: absolute;
+      border-top: 71px solid white;
+      border-right: 50px solid transparent;
+      transition: left 0.4s;
+    }
+  }
+}
+.third-off {
+  position: absolute;
+  top: 20px;
+  left: 160px;
+  cursor: pointer;
+  color: white;
+  opacity: 0.6;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: transparent;
+  z-index: 2;
+  cursor: pointer;
+  width: 120px;
+  text-align: right;
+  z-index: 2;
+  &-active {
+    background-color: white;
+    opacity: 1;
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    transition: background-color 100s ease-out;
+    &::before {
+      content: '';
+      left: 42%;
+      top: 0px;
+      bottom: 0px;
+      position: absolute;
+      border-top: 71px solid white;
+      border-left: 50px solid transparent;
+      transition: left 0.4s;
+    }
+  }
+}
+
+.third {
+  &-on,
+  &-off {
+    &::before,
+    &::after {
+      opacity: 0;
+    }
+  }
+}
+
+.first-switch {
+  width: 210px;
+  height: 62px;
+  display: flex;
+  column-gap: 1px;
+  flex-direction: row;
+}
+
+.a1 {
+  opacity: 1;
+  stroke: #fff;
+  stroke-width: 2px;
+  fill: none;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 320;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2s;
+}
+.a {
+  opacity: 1;
+  stroke: #fff;
+  stroke-width: 2px;
+  fill: none;
+  stroke-dashoffset: -320;
+  stroke-dasharray: 320;
+}
+
+.ao1 {
+  opacity: 0.25;
+  stroke: transparent;
+  stroke-width: 2px;
+  fill: none;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 320;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2s;
+}
+.ao {
+  opacity: 0.25;
+  stroke: black;
+  stroke-width: 2px;
+  fill: none;
+  stroke-dashoffset: 320;
+  stroke-dasharray: 320;
+  z-index: 4;
+}
+
+.b1 {
+  opacity: 1;
+  stroke: transparent;
+  stroke-width: 2px;
+  fill: none;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 320;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2s;
+}
+.b {
+  opacity: 1;
+  stroke: black;
+  stroke-width: 2px;
+  fill: none;
+  stroke-dashoffset: -320;
+  stroke-dasharray: 320;
+}
+
+.bo1 {
+  opacity: 0.25;
+  stroke: white;
+  stroke-width: 2px;
+  fill: none;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 320;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2s;
+}
+.bo {
+  opacity: 0.25;
+  stroke: black;
+  stroke-width: 2px;
+  fill: none;
+  stroke-dashoffset: 320;
+  stroke-dasharray: 320;
+  z-index: 4;
+}
+
+.first-on-wrapper {
+  position: relative;
+}
+
+.first-off-wrapper {
+  position: relative;
+}
+
+.first-on {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  cursor: pointer;
+  color: white;
+  opacity: 0.6;
+  background-color: transparent;
+  z-index: 2;
+  cursor: pointer;
+  width: 100px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+
+
+  &-active {
+    color: white;
+    opacity: 1;
+    transition: background-color 5s ease-out;
+  }
+}
+.first-off {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  cursor: pointer;
+  color: white;
+  opacity: 0.6;
+  background-color: transparent;
+  z-index: 2;
+  cursor: pointer;
+  width: 100px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+
+  &-active {
+    color: white;
+    opacity: 1;
+    transition: background-color 0.5s ease-out;
+  }
+}
