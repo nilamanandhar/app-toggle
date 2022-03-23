@@ -39,26 +39,29 @@ function App() {
           setThirdSwitch(false)
         }
         break;
-        case 4:
-          if(state=== "on") {
-            setSwitchFirst(true)
-          }else{
-            setSwitchFirst(false)
-          }
-          break;
-          case 5:
-            if(state=== "on") {
-              setSwitchSecond(true)
-            }else{
-              setSwitchSecond(false)
-            }
-            break;
-            case 6:
-            if(state=== "on") {
-              setSwitchThird(true)
-            }else{
-              setSwitchThird(false)
-            }
+      case 4:
+        if (state === "on") {
+          setSwitchFirst(true)
+        } else {
+          setSwitchFirst(false)
+        }
+        break;
+      case 5:
+        if (state === "on") {
+          setSwitchSecond(true)
+          console.log("on")
+        } else {
+          setSwitchSecond(false)
+          console.log("off")
+
+        }
+        break;
+      case 6:
+        if (state === "on") {
+          setSwitchThird(true)
+        } else {
+          setSwitchThird(false)
+        }
         break;
 
       default:
@@ -67,38 +70,38 @@ function App() {
 
 
   return (
-    <div className="main-content">
+    <div style={{ width: "100vw", height: "100vh" }}>
 
       {/* start first switch */}
-      <div className="first-switch">
+      {/* <div className="first-switch">
         <div onClick={() => toggoleHandler("on", 1)} className={`${firstSwitch ? "first-active" : "off"}`} >On</div>
         <div onClick={() => toggoleHandler("off", 1)} className={`${!firstSwitch ? "first-active" : "off"}`}> Off</div>
-      </div>
+      </div> */}
       {/* end first switch */}
 
       {/* start second switch */}
-      <div className={`${secondSwitch ? 'second-switch-active' : ''} second-switch`}>
+      {/* <div className={`${secondSwitch ? 'second-switch-active' : ''} second-switch`}>
         <div onClick={() => { toggoleHandler("on", 2) }} className={`${secondSwitch ? "second-on-active" : ""} second-on`}>
           On
         </div>
         <div onClick={() => { toggoleHandler("off", 2) }} className={`${!secondSwitch ? "second-off-active" : ""} second-off`}> Off</div>
-      </div>
-     {/* end second switch */}
+      </div> */}
+      {/* end second switch */}
 
 
       {/* start third switch */}
-      <div className={`${thirdSwitch ? 'third-switch-active' : ''} third-switch`}>
+      {/* <div className={`${thirdSwitch ? 'third-switch-active' : ''} third-switch`}>
         <div onClick={() => toggoleHandler("on", 3)} className={`${thirdSwitch ? "third-on-active" : ""} third-on`}  >On</div>
         <div onClick={() => toggoleHandler("off", 3)} className={`${!thirdSwitch ? "third-off-active" : ""} third-off`}> Off</div>
-      </div>
+      </div> */}
       {/* end third switch */}
 
 
-    {/* new first button */}
+      {/* new first button */}
 
-      <div style={{margin:"30px"}}>
-        {/* <div style={{display: "flex",justifyContent: "space-around",padding:"300px"}}> */}
-        <div className="svg-wrapper">
+      {/* <div style={{margin:"30px"}}> */}
+      {/* <div style={{display: "flex",justifyContent: "space-around",padding:"300px"}}> */}
+      {/* <div className="svg-wrapper">
           <svg className="svg" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
             <rect className={`${switchFirst ? "clickedShape" : "shape"}`} height="calc(100% - 2px)" x="1px" y="1px" width="calc(100% - 2px)" rx="30" vector-effect="non-scaling-stroke" />
           </svg>
@@ -112,29 +115,69 @@ function App() {
             <div onClick={() => toggoleHandler("off",4)}  className={`${!switchFirst?'normalColor':'dimColor'} text`}>Off</div>
           </div>
         </div>
-      </div>
+      </div> */}
 
 
 
-         {/* start new second switch */}
-         <div style={{marginTop:"30px",   border: "none"}} className={`${switchSecond ? 'second-switch-active' : ''} second-switch`}>
+      {/* start new second switch */}
+      {/* <div style={{marginTop:"30px",   border: "none"}} className={`${switchSecond ? 'second-switch-active' : ''} second-switch`}>
          <svg className="svg" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
-            <rect className={`${switchSecond ? "clickedSecondShape " : "clickedSecondOffShape "}`} height="calc(100% - 2px)" x="1px" y="1px" width="calc(100% - 2px)" rx="30" vector-effect="non-scaling-stroke" />
+         <rect style={{opacity: 0.5,       stroke: "#fff", strokeWidth: "5px",
+    strokeDashoffset: 0,
+    strokeDasharray: 400}} height="calc(100% - 50px)" x="1px" y="1px" width="calc(100% - 20px)" rx="30" vector-effect="non-scaling-stroke" />
+          <rect style={{opacity: 0.5,       stroke: "#fff", strokeWidth: "5px",
+    strokeDashoffset: 0,
+    strokeDasharray: 400}} height="calc(100% - 2px)" x="1px" y="1px" width="calc(100% - 2px)" rx="30" vector-effect="non-scaling-stroke" />
           </svg>
         <div onClick={() => { toggoleHandler("on", 5) }} className={`${switchSecond ? "second-on-active" : ""} second-on`}>
           On
         </div>
-        <div onClick={() => { toggoleHandler("off", 5) }} className={`${!switchSecond ? "second-off-active" : ""} second-off`}> Off</div>
-      </div>
-     {/* end new second switch */}
 
-     {/* <div style={{ border: "none"}}className={`${thirdSwitch ? 'third-switch-active' : ''} third-switch`}>
+        <div onClick={() => { toggoleHandler("off", 5) }} className={`${!switchSecond ? "second-off-active" : ""} second-off`}> Off</div>
+      </div> */}
+      {/* end new second switch */}
+
+      {/* <div style={{ border: "none"}}className={`${thirdSwitch ? 'third-switch-active' : ''} third-switch`}>
      <svg className="svg" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
             <rect className={`${switchThird ? "clickedThirdShape " : "clickedThirdOffShape "}`} height="calc(100% - 2px)" x="1px" y="1px" width="calc(100% - 2px)" rx="5" vector-effect="non-scaling-stroke" />
           </svg>
         <div onClick={() => toggoleHandler("on", 3)} className={`${thirdSwitch ? "third-on-active" : ""} third-on`}  >On</div>
         <div onClick={() => toggoleHandler("off", 3)} className={`${!thirdSwitch ? "third-off-active" : ""} third-off`}> Off</div>
       </div> */}
+
+      {/* <div style={{ width: '100%', height: '100%',position:"relative" }} >
+        <svg className="svg" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+          <rect className={`${!switchSecond ? "clickedShape " : "shape"}`}   height="60px" x="1px" y="1px" width="300px" rx="30" vector-effect="non-scaling-stroke" />
+
+            <rect style={{
+            opacity: 0.25, stroke: "black", strokeWidth: "2px",
+            fill:"none",
+
+          }} height="60px" x="1px" y="1px" width="300px" rx="30" vector-effect="non-scaling-stroke" />
+        </svg>
+        <div onClick={()=>{toggoleHandler("on",5)}}style={{position: "absolute",top:"20px",left:"20px",cursor: "pointer"}}>
+          On
+        </div>
+        <div onClick={()=>{toggoleHandler("off",5)}}style={{position: "absolute",top:"20px",left:"250px",cursor:"pointer"}}>
+          Off
+        </div>
+      </div> */}
+
+      <div className={`${switchSecond ? 'second-switch-active' : ''} second-switch`}>
+        <svg className="svg" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+          <rect className={`${switchSecond ? "clickedShape " : "shape"}`}   height="60px" x="1px" y="1px" width="300px" rx="8" vector-effect="non-scaling-stroke" />
+          {/* className="shape" */}
+            <rect className={`${!switchSecond ? "offClickedShape " : "offShape"}`}  height="60px" x="1px" y="1px" width="300px" rx="8" vector-effect="non-scaling-stroke" />
+        </svg>
+        <div onClick={()=>{toggoleHandler("on",5)}} className={`${!switchSecond ? "second-on-active" : ""} second-on`} >
+          On
+        </div>
+        <div onClick={()=>{toggoleHandler("off",5)}} className={`${!switchSecond ? "second-off-active" : ""} second-off`}>
+          Off
+        </div>
+      </div>
+
+
     </div>
   );
 }
