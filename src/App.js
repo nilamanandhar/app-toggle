@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import './App.scss';
 import FirstSwitch from './component/FirstSwitch';
 import SecondSwitch from './component/SecondSwitch';
