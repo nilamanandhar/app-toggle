@@ -77,8 +77,8 @@
 
 .second-on {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 0;
+  left: 0;
   cursor: pointer;
   color: white;
   opacity: 0.6;
@@ -87,7 +87,9 @@
   background-color: transparent;
   z-index: 2;
   cursor: pointer;
-  width: 140px;
+  padding: 20px 118px 20px 21px;
+  border-radius: 30px;
+
 
   &-active {
     font-size: 15px;
@@ -99,7 +101,7 @@
 }
 .second-off {
   position: absolute;
-  top: 20px;
+  top: 0;
   left: 140px;
   cursor: pointer;
   color: white;
@@ -109,8 +111,9 @@
   background-color: transparent;
   z-index: 2;
   cursor: pointer;
-  width: 140px;
-  text-align: right;
+  padding: 20px 21px 20px 118px;
+  border-radius: 30px;
+
 
   &-active {
     z-index: 2;
@@ -157,8 +160,8 @@
 
 .third-on {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 0;
+  left: 0;
   cursor: pointer;
   color: white;
   opacity: 0.6;
@@ -167,10 +170,9 @@
   background-color: transparent;
   z-index: 2;
   cursor: pointer;
-  width: 100px;
+  padding: 20px 118px 20px 21px;
 
   &-active {
-    background-color: white;
     color: black;
     opacity: 1;
     font-size: 15px;
@@ -202,7 +204,7 @@
 }
 .third-off {
   position: absolute;
-  top: 20px;
+  top: 0;
   left: 160px;
   cursor: pointer;
   color: white;
@@ -212,11 +214,12 @@
   background-color: transparent;
   z-index: 2;
   cursor: pointer;
-  width: 120px;
+  // width: 120px;
   text-align: right;
   z-index: 2;
+  padding: 20px 20px 20px 100px;
+
   &-active {
-    background-color: white;
     opacity: 1;
     font-size: 15px;
     font-weight: bold;
@@ -337,7 +340,7 @@
 
 .first-on {
   position: absolute;
-  top: 20px;
+  top: 0;
   left: 0;
   cursor: pointer;
   color: white;
@@ -346,9 +349,13 @@
   z-index: 2;
   cursor: pointer;
   width: 100px;
+  height: 60px;
   text-align: center;
   font-size: 15px;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 
   &-active {
@@ -359,18 +366,21 @@
 }
 .first-off {
   position: absolute;
-  top: 20px;
+  top: 0;
   left: 0;
-  cursor: pointer;
   color: white;
   opacity: 0.6;
   background-color: transparent;
   z-index: 2;
   cursor: pointer;
   width: 100px;
-  text-align: center;
+  height: 60px;
   font-size: 15px;
   font-weight: bold;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &-active {
     color: white;
