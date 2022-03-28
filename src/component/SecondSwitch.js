@@ -22,13 +22,7 @@ export default function SecondSwitch() {
           vector-effect="non-scaling-stroke"
         />
         <rect
-          style={{
-            opacity: 0.6,
-            stroke: "white",
-            strokeWidth: "2px",
-            strokeDashoffset: -720,
-            fill: "none",
-          }}
+        className={"secondDefault"}
           height="60px"
           x="1px"
           y="1px"
