@@ -23,22 +23,23 @@
   stroke: #fff;
   stroke-width: 2px;
   fill: none;
-  stroke-dashoffset: -720;
+  stroke-dashoffset: 720;
   stroke-dasharray: 720;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2s;
 }
 
 .offClickedShape {
-  opacity: 0.25;
+  // opacity: 0.25;
   stroke: white;
   stroke-width: 2px;
   fill: none;
-  stroke-dashoffset: 0;
+  stroke-dashoffset: -720;
   stroke-dasharray: 720;
   transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2s;
 }
 .offShape {
-  opacity: 0.25;
-  stroke: black;
+  opacity: 0.15;
+  // stroke: black;
   stroke-width: 2px;
   fill: none;
   stroke-dashoffset: 720;
@@ -272,6 +273,7 @@
   fill: none;
   stroke-dashoffset: -320;
   stroke-dasharray: 320;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2s;
 }
 
 .ao1 {
@@ -322,12 +324,13 @@
 }
 .bo {
   opacity: 0.25;
-  stroke: black;
+  stroke: white;
   stroke-width: 2px;
   fill: none;
   stroke-dashoffset: 320;
   stroke-dasharray: 320;
   z-index: 4;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2s;
 }
 
 .first-on-wrapper {
