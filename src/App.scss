@@ -9,6 +9,114 @@
   row-gap: 20px;
 }
 
+// start first switch
+
+.first-switch {
+  width: 210px;
+  height: 62px;
+  display: flex;
+  column-gap: 1px;
+  flex-direction: row;
+}
+
+.a1 {
+  opacity: 1;
+  stroke: #fff;
+  stroke-width: 2px;
+  fill: none;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 320;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2s;
+}
+.a {
+  opacity: 1;
+  stroke: #fff;
+  stroke-width: 2px;
+  fill: none;
+  stroke-dashoffset: -320;
+  stroke-dasharray: 320;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2s;
+}
+
+.bo1 {
+  opacity: 0.25;
+  stroke: white;
+  stroke-width: 2px;
+  fill: none;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 320;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2s;
+}
+.bo {
+  opacity: 0.25;
+  stroke: white;
+  stroke-width: 2px;
+  fill: none;
+  stroke-dashoffset: 320;
+  stroke-dasharray: 320;
+  z-index: 4;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2s;
+}
+
+.first-on-wrapper {
+  position: relative;
+}
+
+.first-off-wrapper {
+  position: relative;
+}
+
+.first-on {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  color: white;
+  opacity: 0.6;
+  background-color: transparent;
+  z-index: 2;
+  cursor: pointer;
+  width: 100px;
+  height: 60px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  &-active {
+    color: white;
+    opacity: 1;
+    transition: background-color 5s ease-out;
+  }
+}
+.first-off {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  opacity: 0.6;
+  background-color: transparent;
+  z-index: 2;
+  cursor: pointer;
+  width: 100px;
+  height: 60px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-active {
+    color: white;
+    opacity: 1;
+    transition: background-color 0.5s ease-out;
+  }
+}
+
 .clickedShape {
   opacity: 1;
   stroke: #fff;
@@ -28,25 +136,7 @@
   transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2s;
 }
 
-.offClickedShape {
-  // opacity: 0.25;
-  stroke: white;
-  stroke-width: 2px;
-  fill: none;
-  stroke-dashoffset: -720;
-  stroke-dasharray: 720;
-  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2s;
-}
-.offShape {
-  opacity: 0.15;
-  // stroke: black;
-  stroke-width: 2px;
-  fill: none;
-  stroke-dashoffset: 720;
-  stroke-dasharray: 720;
-  z-index: 4;
-}
-
+// start second switch
 .second-switch {
   height: 62px;
   width: 302px;
@@ -125,6 +215,17 @@
     transition: background-color 0.5s ease-out;
   }
 }
+
+.secondDefault{
+  opacity: 0.6;
+  stroke: white;
+  stroke-width: 2px;
+  stroke-dashoffset: -720;
+  fill: none;
+
+}
+
+// start third switch
 
 .third-switch {
   height: 64px;
@@ -248,157 +349,6 @@
     }
   }
 }
-
-.first-switch {
-  width: 210px;
-  height: 62px;
-  display: flex;
-  column-gap: 1px;
-  flex-direction: row;
-}
-
-.a1 {
-  opacity: 1;
-  stroke: #fff;
-  stroke-width: 2px;
-  fill: none;
-  stroke-dashoffset: 0;
-  stroke-dasharray: 320;
-  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2s;
-}
-.a {
-  opacity: 1;
-  stroke: #fff;
-  stroke-width: 2px;
-  fill: none;
-  stroke-dashoffset: -320;
-  stroke-dasharray: 320;
-  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2s;
-}
-
-.ao1 {
-  opacity: 0.25;
-  stroke: transparent;
-  stroke-width: 2px;
-  fill: none;
-  stroke-dashoffset: 0;
-  stroke-dasharray: 320;
-  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2s;
-}
-.ao {
-  opacity: 0.25;
-  stroke: black;
-  stroke-width: 2px;
-  fill: none;
-  stroke-dashoffset: 320;
-  stroke-dasharray: 320;
-  z-index: 4;
-}
-
-.b1 {
-  opacity: 1;
-  stroke: transparent;
-  stroke-width: 2px;
-  fill: none;
-  stroke-dashoffset: 0;
-  stroke-dasharray: 320;
-  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2s;
-}
-.b {
-  opacity: 1;
-  stroke: black;
-  stroke-width: 2px;
-  fill: none;
-  stroke-dashoffset: -320;
-  stroke-dasharray: 320;
-}
-
-.bo1 {
-  opacity: 0.25;
-  stroke: white;
-  stroke-width: 2px;
-  fill: none;
-  stroke-dashoffset: 0;
-  stroke-dasharray: 320;
-  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2s;
-}
-.bo {
-  opacity: 0.25;
-  stroke: white;
-  stroke-width: 2px;
-  fill: none;
-  stroke-dashoffset: 320;
-  stroke-dasharray: 320;
-  z-index: 4;
-  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 2s;
-}
-
-.first-on-wrapper {
-  position: relative;
-}
-
-.first-off-wrapper {
-  position: relative;
-}
-
-.first-on {
-  position: absolute;
-  top: 0;
-  left: 0;
-  cursor: pointer;
-  color: white;
-  opacity: 0.6;
-  background-color: transparent;
-  z-index: 2;
-  cursor: pointer;
-  width: 100px;
-  height: 60px;
-  text-align: center;
-  font-size: 15px;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-
-  &-active {
-    color: white;
-    opacity: 1;
-    transition: background-color 5s ease-out;
-  }
-}
-.first-off {
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: white;
-  opacity: 0.6;
-  background-color: transparent;
-  z-index: 2;
-  cursor: pointer;
-  width: 100px;
-  height: 60px;
-  font-size: 15px;
-  font-weight: bold;
-  border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &-active {
-    color: white;
-    opacity: 1;
-    transition: background-color 0.5s ease-out;
-  }
-}
-.secondDefault{
-  opacity: 0.6;
-  stroke: white;
-  stroke-width: 2px;
-  stroke-dashoffset: -720;
-  fill: none;
-
-}
 .thirdDefault{
   opacity: 0.6;
   stroke: white;
@@ -406,3 +356,6 @@
   stroke-dashoffset: -720;
   fill: none;
 }
+
+
+

@@ -16,7 +16,6 @@ export default function ThirdSwitch() {
           rx="0"
           vector-effect="non-scaling-stroke"
         />
-        {/* <rect className={`${!switchState ? "offClickedShape " : "offShape"}`}  height="60px" x="1px" y="1px" width="300px" rx="0" vector-effect="non-scaling-stroke" /> */}
         </svg>
         <div onClick={() => setswitchState(true)} className={`${switchState ? "third-on-active" : ""} third-on`}  >On</div>
         <div onClick={() => setswitchState(false)} className={`${!switchState ? "third-off-active" : ""} third-off`}> Off</div>
